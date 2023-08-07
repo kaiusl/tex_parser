@@ -1,0 +1,15 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\parskip=\\medskipamount`"
+---
+stmts:
+  - KnownMacro:
+      name: parskip
+      args:
+        - Token: Assign
+        - Macro:
+            name: medskipamount
+      is_alt: false
+errors: []
+

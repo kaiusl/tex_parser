@@ -1,0 +1,25 @@
+macros:
+  BooleanFalse: []
+  BooleanTrue: []
+  DeclareDocumentCommand: [Cmd, m, m]
+  DeclareDocumentEnvironment: [m, m, m, m]
+  IfBooleanF: [m, m]
+  IfBooleanT: [m, m]
+  IfBooleanTF: [m, m, m]
+  IfNoValueF: [m, m]
+  IfNoValueT: [m, m]
+  IfNoValueTF: [m, m, m]
+  IfValueF: [m, m]
+  IfValueT: [m, m]
+  IfValueTF: [m, m, m]
+  NewDocumentCommand: [Cmd, m, m]
+  NewDocumentEnvironment: [m, m, m, m]
+  ProvideDocumentCommand: [Cmd, m, m]
+  ProvideDocumentEnvironment: [m, m, m, m]
+  RenewDocumentCommand: [Cmd, m, m]
+  RenewDocumentEnvironment: [m, m, m, m]
+
+envs:
+
+envs_alt:
+

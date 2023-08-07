@@ -1,0 +1,25 @@
+---
+source: src/parser.rs
+expression: ast
+info: "input = `$ 1 + 2 $ `"
+---
+stmts:
+  - Env:
+      name: unnamed
+      children:
+        - Token: Space
+        - Token:
+            Number: "1"
+        - Token: Space
+        - Token: Plus
+        - Token: Space
+        - Token:
+            Number: "2"
+        - Token: Space
+      is_alt: false
+      kind: InlineMath
+      start_end:
+        - Token: InlineMathLimiter
+        - Token: InlineMathLimiter
+  - Token: Space
+

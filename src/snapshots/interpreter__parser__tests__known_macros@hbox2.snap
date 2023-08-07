@@ -1,0 +1,29 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\hbox spread0.5\\hsize{‘‘Oh, oh!’’ ... laughed.}`"
+---
+stmts:
+  - KnownMacro:
+      name: hbox
+      args:
+        - Token:
+            Kw: spread
+        - Number: "0.5"
+        - Macro:
+            name: hsize
+        - Block:
+            - Text: ‘‘Oh
+            - Token: Comma
+            - Token: Space
+            - Text: oh!’’
+            - Token: Space
+            - Token: Dot
+            - Token: Dot
+            - Token: Dot
+            - Token: Space
+            - Text: laughed
+            - Token: Dot
+      is_alt: false
+errors: []
+

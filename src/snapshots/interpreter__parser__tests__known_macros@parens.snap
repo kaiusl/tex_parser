@@ -1,0 +1,24 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\put(1.2,3.4){content}{not part}`"
+---
+stmts:
+  - KnownMacro:
+      name: put
+      args:
+        - ParenBlock:
+            - Token:
+                Number: "1.2"
+            - Token: Comma
+            - Token:
+                Number: "3.4"
+        - Block:
+            - Text: content
+      is_alt: false
+  - Block:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

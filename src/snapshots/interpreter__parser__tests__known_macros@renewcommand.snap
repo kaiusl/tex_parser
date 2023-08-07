@@ -1,0 +1,20 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\renewcommand{\\headrulewidth}{1pt}`"
+---
+stmts:
+  - KnownMacro:
+      name: renewcommand
+      args:
+        - Block:
+            - Macro:
+                name: headrulewidth
+        - Block:
+            - Token:
+                Length:
+                  - "1"
+                  - pt
+      is_alt: false
+errors: []
+

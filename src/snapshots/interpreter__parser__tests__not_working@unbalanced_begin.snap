@@ -1,0 +1,9 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\newenvironment{c}{\\begin{b}}{\\end{b}}`"
+---
+stmts: []
+errors:
+  - Expected block or cmd. Found Eof
+

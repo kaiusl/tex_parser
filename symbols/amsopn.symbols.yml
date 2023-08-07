@@ -1,0 +1,15 @@
+macros:
+  DeclareMathOperator: [s, cmd, m]
+  injlim: []
+  operatorfont: []
+  operatorname: [s, m]
+  operatornamewithlimits: [m]
+  projlim: []
+  varinjlim: []
+  varliminf: []
+  varprojlim: []
+
+envs:
+
+envs_alt:
+

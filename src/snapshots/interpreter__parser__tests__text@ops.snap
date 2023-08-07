@@ -1,0 +1,14 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `a+-*/b`"
+---
+stmts:
+  - Text: a
+  - Token: Plus
+  - Token: Minus
+  - Token: Asterisk
+  - Token: Slash
+  - Text: b
+errors: []
+

@@ -1,0 +1,29 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\def\\a [#1]#2 {part}{not part}`"
+---
+stmts:
+  - KnownMacro:
+      name: def
+      args:
+        - Macro:
+            name: a
+        - Token: Space
+        - SquareBlock:
+            - Token: Pound
+            - Token:
+                Number: "1"
+        - Token: Pound
+        - Token:
+            Number: "2"
+        - Token: Space
+        - Block:
+            - Text: part
+      is_alt: false
+  - Block:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

@@ -1,0 +1,15 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\asdfr=5pt`"
+---
+stmts:
+  - Macro:
+      name: asdfr
+  - Token: Assign
+  - Token:
+      Length:
+        - "5"
+        - pt
+errors: []
+

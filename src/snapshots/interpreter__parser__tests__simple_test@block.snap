@@ -1,0 +1,42 @@
+---
+source: src/parser.rs
+expression: ast
+info: "input = `$$ as $$ \\[ as2 \\] $$ as3 \\]`"
+---
+stmts:
+  - Env:
+      name: unnamed
+      children:
+        - Token: Space
+        - Text: as
+        - Token: Space
+      is_alt: false
+      kind: BlockMath
+      start_end:
+        - Token: BlockMathLimiter
+        - Token: BlockMathLimiter
+  - Token: Space
+  - Env:
+      name: unnamed
+      children:
+        - Token: Space
+        - Text: as2
+        - Token: Space
+      is_alt: false
+      kind: BlockMath
+      start_end:
+        - Token: BlockMathStartAlt
+        - Token: BlockMathEndAlt
+  - Token: Space
+  - Env:
+      name: unnamed
+      children:
+        - Token: Space
+        - Text: as3
+        - Token: Space
+      is_alt: false
+      kind: BlockMath
+      start_end:
+        - Token: BlockMathLimiter
+        - Token: BlockMathEndAlt
+

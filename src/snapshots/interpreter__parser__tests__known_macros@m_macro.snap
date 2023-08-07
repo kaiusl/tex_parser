@@ -1,0 +1,14 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\cite\\asf`"
+---
+stmts:
+  - KnownMacro:
+      name: cite
+      args:
+        - Macro:
+            name: asf
+      is_alt: false
+errors: []
+

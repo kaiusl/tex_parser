@@ -1,0 +1,24 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\newtheorem*{m1}[o1]{m2}[o2][not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: newtheorem
+      args:
+        - Block:
+            - Text: m1
+        - SquareBlock:
+            - Text: o1
+        - Block:
+            - Text: m2
+        - SquareBlock:
+            - Text: o2
+      is_alt: true
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

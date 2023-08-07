@@ -1,0 +1,28 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\newcommand{\\hc}[1]{#1^{\\dagger}}`"
+---
+stmts:
+  - KnownMacro:
+      name: newcommand
+      args:
+        - Block:
+            - Macro:
+                name: hc
+        - SquareBlock:
+            - Token:
+                Number: "1"
+        - Block:
+            - Token: Pound
+            - Token:
+                Number: "1"
+            - SuperScript:
+                Block:
+                  - KnownMacro:
+                      name: dagger
+                      args: []
+                      is_alt: false
+      is_alt: false
+errors: []
+

@@ -1,0 +1,29 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\newenvironment{exercise} %\n        {%\n          \\textbf{Exercise}%\n        }%\n        {}%`"
+---
+stmts:
+  - KnownMacro:
+      name: newenvironment
+      args:
+        - Block:
+            - Text: exercise
+        - Token:
+            Comment: "%\n        "
+        - Block:
+            - Comment: "%\n          "
+            - KnownMacro:
+                name: textbf
+                args:
+                  - Block:
+                      - Text: Exercise
+                is_alt: false
+            - Comment: "%\n        "
+        - Token:
+            Comment: "%\n        "
+        - Block: []
+      is_alt: false
+  - Comment: "%"
+errors: []
+

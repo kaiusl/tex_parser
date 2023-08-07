@@ -1,0 +1,33 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\begin{equation} a &= b \\\\ &= c \\end{equation}`"
+---
+stmts:
+  - KnownEnv:
+      name: equation
+      args: []
+      children:
+        - Token: Space
+        - Text: a
+        - Token: Space
+        - Token: Ampersand
+        - Token: Assign
+        - Token: Space
+        - Text: b
+        - Token: Space
+        - KnownMacro:
+            name: "\\"
+            args: []
+            is_alt: false
+        - Token: Space
+        - Token: Ampersand
+        - Token: Assign
+        - Token: Space
+        - Text: c
+        - Token: Space
+      is_alt: false
+      kind: BlockMath
+      start_end: ~
+errors: []
+

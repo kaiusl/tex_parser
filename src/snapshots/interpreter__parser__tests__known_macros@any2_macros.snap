@@ -1,0 +1,18 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\atopwithdelims\\a\\b notpart`"
+---
+stmts:
+  - KnownMacro:
+      name: atopwithdelims
+      args:
+        - Token:
+            MacroName: a
+        - Token:
+            MacroName: b
+      is_alt: false
+  - Token: Space
+  - Text: notpart
+errors: []
+

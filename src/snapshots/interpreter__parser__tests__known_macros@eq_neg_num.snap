@@ -1,0 +1,20 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\adjdemerits=-5[not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: adjdemerits
+      args:
+        - Token: Assign
+        - Token: Minus
+        - Token:
+            Number: "5"
+      is_alt: false
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

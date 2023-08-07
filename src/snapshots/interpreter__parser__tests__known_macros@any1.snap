@@ -1,0 +1,28 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `$\\left(notpart\\right)notpart$`"
+---
+stmts:
+  - Env:
+      name: unnamed
+      children:
+        - KnownMacro:
+            name: left
+            args:
+              - Token: LParen
+            is_alt: false
+        - Text: notpart
+        - KnownMacro:
+            name: right
+            args:
+              - Token: RParen
+            is_alt: false
+        - Text: notpart
+      is_alt: false
+      kind: InlineMath
+      start_end:
+        - Token: InlineMathLimiter
+        - Token: InlineMathLimiter
+errors: []
+

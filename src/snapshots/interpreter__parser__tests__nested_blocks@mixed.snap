@@ -1,0 +1,12 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `{[{()}]}`"
+---
+stmts:
+  - Block:
+      - SquareBlock:
+          - Block:
+              - ParenBlock: []
+errors: []
+

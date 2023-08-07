@@ -1,0 +1,26 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `$ \\lambda_asfs $ `"
+---
+stmts:
+  - Env:
+      name: unnamed
+      children:
+        - Token: Space
+        - KnownMacro:
+            name: lambda
+            args: []
+            is_alt: false
+        - SubScript:
+            Text: a
+        - Text: sfs
+        - Token: Space
+      is_alt: false
+      kind: InlineMath
+      start_end:
+        - Token: InlineMathLimiter
+        - Token: InlineMathLimiter
+  - Token: Space
+errors: []
+

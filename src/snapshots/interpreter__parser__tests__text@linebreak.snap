@@ -1,0 +1,16 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `a \\\\ b`"
+---
+stmts:
+  - Text: a
+  - Token: Space
+  - KnownMacro:
+      name: "\\"
+      args: []
+      is_alt: false
+  - Token: Space
+  - Text: b
+errors: []
+

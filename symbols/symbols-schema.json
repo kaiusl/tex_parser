@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "LaTeX Symbols",
+    "description": "List known LaTeX symbols with their arguments.",
+    "type": "object",
+    "properties": {
+        "macros": {
+            "description": "Known macros.",
+            "$ref": "#/definitions/arg_list"
+        },
+        "envs": {
+            "description": "Known environments.",
+            "$ref": "#/definitions/arg_list"
+        },
+        "envs_alt": {
+            "description": "Known environments with alternative (starred) form.",
+            "$ref": "#/definitions/arg_list"
+        }
+    },
+    "required": [
+        "macros",
+        "envs",
+        "envs_alt"
+    ],
+    "definitions": {
+        "arg_list": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/vals"
+                        },
+                        {
+                            "$ref": "#/definitions/any"
+                        }
+                    ]
+                }
+            },
+            "uniqueItems": true,
+            "minProperties": 0
+        },
+        "any": {
+            "type": "object",
+            "properties": {
+                "any": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "any"
+            ]
+        },
+        "vals": {
+            "type": "string",
+            "enum": [
+                "m",
+                "o",
+                "s",
+                "cmd",
+                "any_until",
+                "pb",
+                "bool",
+                "any",
+                "eq",
+                "len",
+                "num",
+                "width",
+                "height",
+                "at",
+                "by",
+                "depth",
+                "plus",
+                "minus",
+                "to",
+                "spread",
+                "semicolon",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ]
+        }
+    }
+}

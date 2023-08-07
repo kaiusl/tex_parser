@@ -1,0 +1,10 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\asdfr`"
+---
+stmts:
+  - Macro:
+      name: asdfr
+errors: []
+

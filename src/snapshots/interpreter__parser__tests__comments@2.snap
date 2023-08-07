@@ -1,0 +1,9 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `%\\newcommand{\\hc}[1]{#1^{\\dagger}}`"
+---
+stmts:
+  - Comment: "%\\newcommand{\\hc}[1]{#1^{\\dagger}}"
+errors: []
+

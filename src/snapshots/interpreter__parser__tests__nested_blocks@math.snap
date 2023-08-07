@@ -1,0 +1,19 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `${{{}}}$`"
+---
+stmts:
+  - Env:
+      name: unnamed
+      children:
+        - Block:
+            - Block:
+                - Block: []
+      is_alt: false
+      kind: InlineMath
+      start_end:
+        - Token: InlineMathLimiter
+        - Token: InlineMathLimiter
+errors: []
+

@@ -1,0 +1,22 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `a - b -- c --- d`"
+---
+stmts:
+  - Text: a
+  - Token: Space
+  - Token: Minus
+  - Token: Space
+  - Text: b
+  - Token: Space
+  - DoubleDash
+  - Token: Space
+  - Text: c
+  - Token: Space
+  - TripleDash
+  - Token: Minus
+  - Token: Space
+  - Text: d
+errors: []
+

@@ -1,0 +1,17 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `asf\\`ofs af`"
+---
+stmts:
+  - Text: asf
+  - KnownMacro:
+      name: "`"
+      args:
+        - Text: o
+      is_alt: false
+  - Text: fs
+  - Token: Space
+  - Text: af
+errors: []
+

@@ -1,0 +1,18 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\begin{center*} as \\end{center*}`"
+---
+stmts:
+  - KnownEnv:
+      name: center
+      args: []
+      children:
+        - Token: Space
+        - Text: as
+        - Token: Space
+      is_alt: true
+      kind: Regular
+      start_end: ~
+errors: []
+

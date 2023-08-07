@@ -1,0 +1,11 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `a \n\n b`"
+---
+stmts:
+  - Text: a
+  - ParBreak
+  - Text: b
+errors: []
+

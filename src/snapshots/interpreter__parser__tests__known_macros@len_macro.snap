@@ -1,0 +1,18 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\arraycolsep\\mac[not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: arraycolsep
+      args:
+        - Macro:
+            name: mac
+      is_alt: false
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

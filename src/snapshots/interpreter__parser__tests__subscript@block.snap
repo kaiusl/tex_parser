@@ -1,0 +1,32 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `$ 1_{a 2 + 3} $ `"
+---
+stmts:
+  - Env:
+      name: unnamed
+      children:
+        - Token: Space
+        - Token:
+            Number: "1"
+        - SubScript:
+            Block:
+              - Text: a
+              - Token: Space
+              - Token:
+                  Number: "2"
+              - Token: Space
+              - Token: Plus
+              - Token: Space
+              - Token:
+                  Number: "3"
+        - Token: Space
+      is_alt: false
+      kind: InlineMath
+      start_end:
+        - Token: InlineMathLimiter
+        - Token: InlineMathLimiter
+  - Token: Space
+errors: []
+

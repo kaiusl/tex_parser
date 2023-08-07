@@ -1,0 +1,30 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\begin{picture}(1,5)(2.4,5.6) as \\end{picture}`"
+---
+stmts:
+  - KnownEnv:
+      name: picture
+      args:
+        - ParenBlock:
+            - Token:
+                Number: "1"
+            - Token: Comma
+            - Token:
+                Number: "5"
+        - ParenBlock:
+            - Token:
+                Number: "2.4"
+            - Token: Comma
+            - Token:
+                Number: "5.6"
+      children:
+        - Token: Space
+        - Text: as
+        - Token: Space
+      is_alt: false
+      kind: Regular
+      start_end: ~
+errors: []
+

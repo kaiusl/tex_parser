@@ -1,0 +1,14 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\linebreak text`"
+---
+stmts:
+  - KnownMacro:
+      name: linebreak
+      args: []
+      is_alt: false
+  - Token: Space
+  - Text: text
+errors: []
+

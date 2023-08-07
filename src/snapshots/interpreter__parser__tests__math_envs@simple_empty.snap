@@ -1,0 +1,16 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\begin{equation} \\end{equation}`"
+---
+stmts:
+  - KnownEnv:
+      name: equation
+      args: []
+      children:
+        - Token: Space
+      is_alt: false
+      kind: BlockMath
+      start_end: ~
+errors: []
+

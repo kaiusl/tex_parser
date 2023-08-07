@@ -1,0 +1,17 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\begin{asfs*} as \\end{asfs*}`"
+---
+stmts:
+  - Env:
+      name: asfs
+      children:
+        - Token: Space
+        - Text: as
+        - Token: Space
+      is_alt: true
+      kind: Regular
+      start_end: ~
+errors: []
+

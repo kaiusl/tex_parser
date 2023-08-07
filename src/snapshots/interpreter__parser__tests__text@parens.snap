@@ -1,0 +1,20 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `a(fsa [sf )]b{f}sa`"
+---
+stmts:
+  - Text: a
+  - ParenBlock:
+      - Text: fsa
+      - Token: Space
+      - Token: LSquare
+      - Text: sf
+      - Token: Space
+  - Token: RSquare
+  - Text: b
+  - Block:
+      - Text: f
+  - Text: sa
+errors: []
+

@@ -1,0 +1,20 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\documentclass[opt]{pkg}[not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: documentclass
+      args:
+        - SquareBlock:
+            - Text: opt
+        - Block:
+            - Text: pkg
+      is_alt: false
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

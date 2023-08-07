@@ -1,0 +1,8 @@
+/target
+__pycache__/*
+flamegraph.svg
+perf.*
+callgrind.*
+symbols/*.bak
+parsed.txt
+Cargo.lock

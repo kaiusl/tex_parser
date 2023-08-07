@@ -1,0 +1,18 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\cite{a,b,c}`"
+---
+stmts:
+  - KnownMacro:
+      name: cite
+      args:
+        - Block:
+            - Text: a
+            - Token: Comma
+            - Text: b
+            - Token: Comma
+            - Text: c
+      is_alt: false
+errors: []
+

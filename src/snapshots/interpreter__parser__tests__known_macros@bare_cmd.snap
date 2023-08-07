@@ -1,0 +1,25 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\newcommand\\cmd[1]{#1}[not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: newcommand
+      args:
+        - Macro:
+            name: cmd
+        - SquareBlock:
+            - Token:
+                Number: "1"
+        - Block:
+            - Token: Pound
+            - Token:
+                Number: "1"
+      is_alt: false
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

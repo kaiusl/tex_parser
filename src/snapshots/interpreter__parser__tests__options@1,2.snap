@@ -1,0 +1,22 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\usepackage[a, 5pt]{pkg}`"
+---
+stmts:
+  - KnownMacro:
+      name: usepackage
+      args:
+        - SquareBlock:
+            - Text: a
+            - Token: Comma
+            - Token: Space
+            - Token:
+                Length:
+                  - "5"
+                  - pt
+        - Block:
+            - Text: pkg
+      is_alt: false
+errors: []
+

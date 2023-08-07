@@ -1,0 +1,40 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\documentclass[opt, opt2, opt3=5pt, opt4={a, b}]{pkg}[not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: documentclass
+      args:
+        - SquareBlock:
+            - Text: opt
+            - Token: Comma
+            - Token: Space
+            - Text: opt2
+            - Token: Comma
+            - Token: Space
+            - Text: opt3
+            - Token: Assign
+            - Token:
+                Length:
+                  - "5"
+                  - pt
+            - Token: Comma
+            - Token: Space
+            - Text: opt4
+            - Token: Assign
+            - Block:
+                - Text: a
+                - Token: Comma
+                - Token: Space
+                - Text: b
+        - Block:
+            - Text: pkg
+      is_alt: false
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

@@ -1,0 +1,22 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\% \\$ \\#`"
+---
+stmts:
+  - KnownMacro:
+      name: "%"
+      args: []
+      is_alt: false
+  - Token: Space
+  - KnownMacro:
+      name: $
+      args: []
+      is_alt: false
+  - Token: Space
+  - KnownMacro:
+      name: "#"
+      args: []
+      is_alt: false
+errors: []
+

@@ -1,0 +1,22 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\begin{tabular}[opt]{arg} as \\end{tabular}`"
+---
+stmts:
+  - KnownEnv:
+      name: tabular
+      args:
+        - SquareBlock:
+            - Text: opt
+        - Block:
+            - Text: arg
+      children:
+        - Token: Space
+        - Text: as
+        - Token: Space
+      is_alt: false
+      kind: Regular
+      start_end: ~
+errors: []
+

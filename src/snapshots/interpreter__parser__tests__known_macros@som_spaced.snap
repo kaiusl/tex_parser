@@ -1,0 +1,21 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\chapter  *  [opt]  {pkg}  [not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: chapter
+      args:
+        - SquareBlock:
+            - Text: opt
+        - Block:
+            - Text: pkg
+      is_alt: true
+  - Token: Space
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

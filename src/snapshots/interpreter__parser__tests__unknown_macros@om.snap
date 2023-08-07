@@ -1,0 +1,14 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\asdfr[opt]{pkg}`"
+---
+stmts:
+  - Macro:
+      name: asdfr
+  - SquareBlock:
+      - Text: opt
+  - Block:
+      - Text: pkg
+errors: []
+

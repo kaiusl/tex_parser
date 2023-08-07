@@ -1,0 +1,16 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\lambda[not part]`"
+---
+stmts:
+  - KnownMacro:
+      name: lambda
+      args: []
+      is_alt: false
+  - SquareBlock:
+      - Text: not
+      - Token: Space
+      - Text: part
+errors: []
+

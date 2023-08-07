@@ -1,0 +1,16 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\'abg ds`"
+---
+stmts:
+  - KnownMacro:
+      name: "'"
+      args:
+        - Text: a
+      is_alt: false
+  - Text: bg
+  - Token: Space
+  - Text: ds
+errors: []
+

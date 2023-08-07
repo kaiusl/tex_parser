@@ -1,0 +1,32 @@
+---
+source: src/parser.rs
+expression: "AstWErrors { stmts, errors: p.errors() }"
+info: "input = `\\hskip 3cm plus 5mm minus 6pt not part`"
+---
+stmts:
+  - KnownMacro:
+      name: hskip
+      args:
+        - Token:
+            Length:
+              - "3"
+              - cm
+        - Token:
+            Kw: plus
+        - Token:
+            Length:
+              - "5"
+              - mm
+        - Token:
+            Kw: minus
+        - Token:
+            Length:
+              - "6"
+              - pt
+      is_alt: false
+  - Token: Space
+  - Text: not
+  - Token: Space
+  - Text: part
+errors: []
+
